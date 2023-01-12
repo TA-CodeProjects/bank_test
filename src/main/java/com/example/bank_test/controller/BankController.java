@@ -14,7 +14,7 @@ public class BankController {
     @PostMapping("transaction")
     public String getTransaction(@RequestBody Transaction transaction){
         kafkaTemplate.send("bankTransactions", transaction.toString());
-        return "ok";
+        return "Success";
     }
 
 }
